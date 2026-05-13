@@ -11,6 +11,8 @@
 (cua-mode 1)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-o") 'find-file)
+(global-set-key (kbd "C-q") #'save-buffers-kill-terminal)
+
 
 (defun my/close-buffers-of-current-tab ()
   "Kill all buffers displayed in the current tab."
@@ -31,10 +33,10 @@
 
 
 
-(defun wsl-sync-kill-ring-to-clipboard (&rest _)
+(defun my/wsl-sync-kill-ring-to-clipboard (&rest _)
   (let ((text (current-kill 0)))
     (with-temp-buffer
       (insert text)
       (call-process-region (point-min) (point-max) "clip.exe"))))
 
-(advice-add 'kill-new :after #'wsl-sync-kill-ring-to-clipboard)
+(advice-add 'kill-new :after #'my/wsl-sync-kill-ring-to-clipboard)
