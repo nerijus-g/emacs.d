@@ -1,3 +1,8 @@
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
+
 (setq auto-save-default nil
       auto-save-list-file-prefix nil
       make-backup-files nil
@@ -51,4 +56,3 @@
 (with-eval-after-load 'dired
   (define-key dired-mode-map [mouse-1] #'dired-find-alternate-file)
   (define-key dired-mode-map [mouse-2] #'dired-find-alternate-file))
-
