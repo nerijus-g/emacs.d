@@ -1,7 +1,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-
+(load-theme 'tango t)
 
 (setq auto-save-default nil
       auto-save-list-file-prefix nil
